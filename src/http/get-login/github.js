@@ -16,10 +16,15 @@ module.exports = async function github(req) {
 
   let token = result.body.access_token
 
+  console.log(token)
+
   // use the access token to get the user account
   let user = await tiny.get({
-    url: `https://api.github.com/user?access_token=${token}`,
-    headers: {Accept: 'application/json'},
+    url: `https://api.github.com/user`,
+    headers: {
+      Accept: 'application/json',
+      Authorization: `Bearer ${token}`
+    },
   })
 
   // create a clean acccount obj
