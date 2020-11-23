@@ -1,0 +1,7 @@
+{
+  "name": "delete-lists-000key",
+  "dependencies": {
+    "@architect/functions": "latest",
+    "@begin/data": "latest"
+  }
+}
