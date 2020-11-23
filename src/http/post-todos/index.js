@@ -7,7 +7,7 @@ async function create(req) {
   console.log(req.body)
   await data.set({
     table: `todos-${req.session.account.id}`,
-    ...req.body
+    todo: req.body
   })
 }
 

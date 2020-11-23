@@ -8,7 +8,7 @@ async function render(payload) {
     main.innerHTML = `<a href=${payload.href}>${payload.message}</a>`
     return;
   }
-  
+
   let html = `
     <a href=/logout>logout</a>
     <input type=text id=new-todo placeholder="todo text here">
@@ -72,7 +72,7 @@ try {
     let res = await read()
     await render(res)
   })()
-} 
+}
 catch(err) {
   console.log('err', err)
 }

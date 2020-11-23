@@ -5,7 +5,7 @@ export async function create(params) {
     headers: {
       'content-type': 'application/json'
     },
-    body: JSON.stringify(params.text)
+    body: JSON.stringify(params)
   })
   return req.json()
 }
