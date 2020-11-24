@@ -4,8 +4,9 @@ let read = require('@architect/shared/read')
 let data = require('@begin/data')
 
 async function write(req) {
+  let parse = JSON.parse(req.body)
   let table = `todos-${req.session.account.id}`
-  let {key, complete} = req.body
+  let {key, complete} = parse
   let copy = await data.get({table, key})
   copy.complete = complete
   await data.set(copy)
